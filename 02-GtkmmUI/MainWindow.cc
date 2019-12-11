@@ -8,14 +8,14 @@ MainWindow::MainWindow()
 
   // When the button receives the "clicked" signal, it will call the
   // following method
-  m_button.signal_clicked().connect(sigc::mem_fun(*this,
-						  &MainWindow::on_button_clicked));
+  //  m_button.signal_clicked().connect(sigc::mem_fun(*this,
+  //						  &MainWindow::on_button_clicked));
 
   // Packs the button into the Window (a container).
-  add(m_button);
+//  add(m_button);
 
   // Dispalay the newly created widget ...
-  m_button.show();
+//  m_button.show();
 }
 
 MainWindow::~MainWindow(){

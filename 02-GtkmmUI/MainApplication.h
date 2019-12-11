@@ -12,7 +12,7 @@ class MainApplication {
   MainApplication(int argc, char** argv, std::string message);
   int Run();
  private:
-  MainWindow mainWindow;
+  // MainWindow mainWindow;
   Glib::RefPtr<Gtk::Application> app;
 };
 
