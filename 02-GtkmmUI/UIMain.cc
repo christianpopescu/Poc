@@ -1,6 +1,12 @@
-#include "MainApplication.h"
+#include "MainWindow.h"
+#include <gtkmm/application.h>
 
-int main(int argc, char** argv){
-  MainApplication application(argc, argv, "Hellow World Window");
-  return application.Run();
+int main (int argc, char *argv[])
+{
+  auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+
+  MainWindow mainWindow;
+
+  //Shows the window and returns when it is closed.
+  return app->run(mainWindow);
 }

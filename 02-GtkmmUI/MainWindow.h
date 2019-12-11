@@ -10,9 +10,9 @@ class MainWindow : public Gtk::Window {
   virtual ~MainWindow();
  protected:
   // Signal handlers:
-  void on_button_clicked();
+   void on_button_clicked();
 
   // Member widgets:
-  Gtk::Button m_button;
+    Gtk::Button m_button;
 };
 #endif  //  MAIN_WINDOW_H
