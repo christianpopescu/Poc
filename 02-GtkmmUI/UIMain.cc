@@ -1,3 +1,4 @@
+#include "MainApplication.h"
 #include "MainWindow.h"
 #include <gtkmm/application.h>
 

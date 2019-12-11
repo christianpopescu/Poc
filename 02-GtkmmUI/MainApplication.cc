@@ -1,12 +1,11 @@
+#include "MainApplication.h"
 #include "MainWindow.h"
-#include <gtkmm/application.h>
 
-int main (int argc, char *argv[])
-{
-  auto app = Gtk::Application::create(argc, argv, "org.gtkmm.example");
+MainApplication::MainApplication(int argc, char** argv, std::string message){
+  //app = Gtk::Application::create(argc, argv, message);
+}
 
-  MainWindow mainWindow;
-
-  //Shows the window and returns when it is closed.
-  return app->run(mainWindow);
+int MainApplication::Run(){
+  return 0;
+  // return app->run(mainWindow);
 }
