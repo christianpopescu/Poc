@@ -3,6 +3,7 @@
 
 #include <gtkmm/button.h>
 #include <gtkmm/window.h>
+#include <gtkmm/box.h>
 
 class MainWindow : public Gtk::Window {
  public :
@@ -11,8 +12,14 @@ class MainWindow : public Gtk::Window {
  protected:
   // Signal handlers:
    void on_button_clicked();
+  void on_button_action();
 
+  //Container widget
+  Gtk::Box m_box;
+  
   // Member widgets:
-    Gtk::Button m_button;
+  Gtk::Button m_button;
+  Gtk::Button m_button_action;
+  
 };
 #endif  //  MAIN_WINDOW_H
