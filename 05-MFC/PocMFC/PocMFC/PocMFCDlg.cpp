@@ -52,6 +52,7 @@ END_MESSAGE_MAP()
 
 CPocMFCDlg::CPocMFCDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_POCMFC_DIALOG, pParent)
+	, OutputString(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -59,12 +60,16 @@ CPocMFCDlg::CPocMFCDlg(CWnd* pParent /*=nullptr*/)
 void CPocMFCDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_E_TEXT, OutputText);
+	DDX_Text(pDX, IDC_EDIT2, OutputString);
 }
 
 BEGIN_MESSAGE_MAP(CPocMFCDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_B_GetSomeText, &CPocMFCDlg::OnBnClickedBGetsometext)
+	ON_EN_CHANGE(IDC_E_TEXT, &CPocMFCDlg::OnEnChangeEdit1)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +158,25 @@ HCURSOR CPocMFCDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CPocMFCDlg::OnBnClickedBGetsometext()
+{
+	// TODO: Add your control notification handler code here
+	
+	OutputText.SetWindowTextW(_T("Test added Text \r\n Test Test"));
+	OutputString.Append(_T("Test added Text \r\n Test Test"));
+	UpdateData(FALSE);
+
+}
+
+
+void CPocMFCDlg::OnEnChangeEdit1()
+{
+	// TODO:  If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CDialogEx::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+
+	// TODO:  Add your control notification handler code here
+}

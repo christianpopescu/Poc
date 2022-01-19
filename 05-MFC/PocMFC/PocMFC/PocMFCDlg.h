@@ -31,4 +31,9 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedBGetsometext();
+	afx_msg void OnEnChangeEdit1();
+	CEdit OutputText;
+	CString OutputString;
 };
