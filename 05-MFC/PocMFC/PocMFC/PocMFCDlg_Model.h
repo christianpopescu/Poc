@@ -5,4 +5,5 @@ class PocMFCDlgModel {
 public:
 	CString Output;
 	PocMFCDlgModel();
+	void ButtonPushed();
 };

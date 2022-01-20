@@ -167,7 +167,7 @@ void CPocMFCDlg::OnBnClickedBGetsometext()
 	// TODO: Add your control notification handler code here
 	
 	OutputText.SetWindowTextW(_T("Test added Text \r\n Test Test"));
-	Model->Output.Append(_T("Test added Text \r\n Test Test"));
+	Model->ButtonPushed();
 	UpdateData(FALSE);
 
 }
