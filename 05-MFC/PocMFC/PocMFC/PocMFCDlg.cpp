@@ -52,8 +52,9 @@ END_MESSAGE_MAP()
 
 CPocMFCDlg::CPocMFCDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_POCMFC_DIALOG, pParent)
-	, OutputString(_T(""))
+	, Model()
 {
+	//Model.Output(_T(""));
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -61,7 +62,7 @@ void CPocMFCDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_E_TEXT, OutputText);
-	DDX_Text(pDX, IDC_EDIT2, OutputString);
+	DDX_Text(pDX, IDC_EDIT2, Model.Output);
 }
 
 BEGIN_MESSAGE_MAP(CPocMFCDlg, CDialogEx)
@@ -165,7 +166,7 @@ void CPocMFCDlg::OnBnClickedBGetsometext()
 	// TODO: Add your control notification handler code here
 	
 	OutputText.SetWindowTextW(_T("Test added Text \r\n Test Test"));
-	OutputString.Append(_T("Test added Text \r\n Test Test"));
+	Model.Output.Append(_T("Test added Text \r\n Test Test"));
 	UpdateData(FALSE);
 
 }
