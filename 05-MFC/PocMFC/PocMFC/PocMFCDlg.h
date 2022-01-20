@@ -4,6 +4,7 @@
 
 #pragma once
 #include "PocMFCDlg_Model.h"
+#include<memory>
 
 // CPocMFCDlg dialog
 class CPocMFCDlg : public CDialogEx
@@ -36,5 +37,5 @@ public:
 	afx_msg void OnEnChangeEdit1();
 	CEdit OutputText;
 	//CString OutputString;
-	PocMFCDlgModel Model;
+	std::unique_ptr<PocMFCDlgModel> Model;
 };
