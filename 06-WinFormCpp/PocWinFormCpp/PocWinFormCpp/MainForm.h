@@ -35,6 +35,8 @@ namespace PocWinFormCpp {
 
 			 //textBox1->DataBindings ->Add("Text",bs, "text");
 			textBox1->DataBindings->Add(b);
+			textBox1->DataBindings->DefaultDataSourceUpdateMode = DataSourceUpdateMode::OnPropertyChanged;
+			
 
 		}
 
@@ -121,6 +123,7 @@ namespace PocWinFormCpp {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		dialogModel->DoAction();
 		//textBox1->Text = textBox1->Text->Concat(textBox1->Text, "Test2 ");
+		textBox1->ResetBindings();
 		textBox1->Refresh();
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
