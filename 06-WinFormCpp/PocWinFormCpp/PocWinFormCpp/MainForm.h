@@ -31,7 +31,7 @@ namespace PocWinFormCpp {
 		
 //			BindingSource^ bs = gcnew BindingSource();
 //			bs->DataSource = dialogModel;
-			Binding^ b = gcnew Binding("Text", dialogModel,"text",true,DataSourceUpdateMode::OnPropertyChanged);
+			Binding^ b = gcnew Binding("Text", dialogModel,"text");
 			//bs->DataSource = dialogModel;
 
 			 //textBox1->DataBindings ->Add("Text",bs, "text");
