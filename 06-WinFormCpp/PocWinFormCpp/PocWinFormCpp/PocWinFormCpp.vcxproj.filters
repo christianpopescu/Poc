@@ -21,9 +21,15 @@
     <ClCompile Include="PocWinFormApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainFormModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFormModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
