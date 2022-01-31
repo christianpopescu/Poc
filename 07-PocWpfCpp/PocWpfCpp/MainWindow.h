@@ -8,6 +8,11 @@ ref class MainWindow :
 {
 protected:
       virtual void  OnInitialized(EventArgs^ e) override;
+      Button^ closeButton;
+      TextBox^ tb;
+      Canvas^ canvas;
+
+
 private:
     void CloseWindow(System::Object^ sender, System::Windows::RoutedEventArgs^ e);
 };
