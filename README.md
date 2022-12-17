@@ -1,2 +1,0 @@
-# Poc
-Proof of concept

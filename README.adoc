@@ -1,0 +1,27 @@
+= POC
+Doc Writer <christian.popescu@outlook.com>
+v 1.0, 2022-12-17
+:sectnums:
+:toc:
+:toclevels: 5
+
+== Description
+
+The purpose of this repository is to keep small POC projects.
+
+
+
+== Projects
+
+[cols="1,1"]
+|====
+| ... to fill
+|
+
+| *08-PocOfficeInteropCppCli*
+| Use office interops from Managed c++
+
+| *09-PocWpfMVVMCSharp*
+| Poc WPF C# basic structure for MVVM. There will be netcore project
+
+|====
