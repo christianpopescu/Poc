@@ -1,0 +1,63 @@
+= PocWpfMVVMCSharp Worklog
+Doc Writer <christian.popescu@outlook.com>
+v 1.0, 2022-12-17
+:sectnums:
+:toc:
+:toclevels: 5
+
+
+== 17/12/2022 Project creation
+
+Commands:
+
+
+    dotnet new sln --name PocWpfMvvm
+
+    dotnet new wpf --name WpfApplication
+
+    dotnet sln add WpfApplication\WpfApplication.csproj
+
+Project contents:
+
+    D:\ccp_wrks\Poc\09-PocWpfMVVMCSharp\src>tree /f
+
+
+    D:.
+    \---PocWpfMvvm
+    |   PocWpfMvvm.sln
+    |
+    \---WpfApplication
+    |   App.xaml
+    |   App.xaml.cs
+    |   AssemblyInfo.cs
+    |   MainWindow.xaml
+    |   MainWindow.xaml.cs
+    |   WpfApplication.csproj
+    |
+    +---bin
+    |   \---Debug
+    |       \---net7.0-windows
+    \---obj
+    |   project.assets.json
+    |   WpfApplication.csproj.nuget.dgspec.json
+    |   WpfApplication.csproj.nuget.g.props
+    |   WpfApplication.csproj.nuget.g.targets
+    |
+    \---Debug
+    \---net7.0-windows
+    |   .NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+    |   App.g.i.cs
+    |   apphost.exe
+    |   MainWindow.g.i.cs
+    |   WpfApplication.assets.cache
+    |   WpfApplication.csproj.BuildWithSkipAnalyzers
+    |   WpfApplication.csproj.FileListAbsolute.txt
+    |   WpfApplication_MarkupCompile.i.cache
+    |   WpfApplication_xwlyrr05_wpftmp.AssemblyInfo.cs
+    |   WpfApplication_xwlyrr05_wpftmp.AssemblyInfoInputs.cache
+    |   WpfApplication_xwlyrr05_wpftmp.assets.cache
+    |   WpfApplication_xwlyrr05_wpftmp.csproj.BuildWithSkipAnalyzers
+    |   WpfApplication_xwlyrr05_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+    |
+    +---ref
+    \---refint
