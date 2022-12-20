@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Poc WPF MVVM" Height="450" Width="800">
     <Grid>
+        <TextBox HorizontalAlignment="Left" Height="65" Margin="44,59,0,0" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="173"/>
+        <TextBox HorizontalAlignment="Left" Height="65" Margin="441,59,0,0" TextWrapping="Wrap" Text="{Binding TextView}" VerticalAlignment="Top" Width="205"/>
+        <Button Content="Transform" HorizontalAlignment="Left" Height="23" Margin="287,79,0,0" VerticalAlignment="Top" Width="65" Command="{Binding OnTransformButton}"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Height="20" Margin="287,169,0,0" VerticalAlignment="Top" Width="65" Command="{Binding OnClear}"/>
 
     </Grid>
 </Window>

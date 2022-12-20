@@ -13,5 +13,9 @@ namespace WpfApplication
     /// </summary>
     public partial class App : Application
     {
+        MainWindowModel model = new MainWindowModel();
+
+
+
     }
 }

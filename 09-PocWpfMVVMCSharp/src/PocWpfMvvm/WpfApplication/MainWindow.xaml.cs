@@ -20,9 +20,11 @@ namespace WpfApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowModel theModel = new();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = theModel;
         }
     }
 }
