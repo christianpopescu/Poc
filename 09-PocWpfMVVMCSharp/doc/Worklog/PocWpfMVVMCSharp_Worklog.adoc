@@ -167,3 +167,8 @@ Main points:
 
 image::img/DataBinding - 01.png[]
 
+== 05/01/2023
+
+* Add new dialog window opened from a button.
+
+image::img/Second window.png[]

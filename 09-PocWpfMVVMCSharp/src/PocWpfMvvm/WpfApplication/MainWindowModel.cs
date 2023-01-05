@@ -38,12 +38,15 @@ namespace WpfApplication
         private string _textView;
         private Transform _transformText;
         private Transform _clearView;
+        private Transform _secondFunctionality;
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public MainWindowModel()
         {
             _transformText = new(TransformAction);
             _clearView = new(ClearAction);
+            _secondFunctionality = new(OpenSecondWindow);
         }
 
         public ICommand OnTransformButton
@@ -54,6 +57,11 @@ namespace WpfApplication
         public ICommand OnClear
         { 
             get { return _clearView; } 
+        }
+
+        public ICommand OnOpenSecondWindow
+        {
+            get { return _secondFunctionality; }    
         }
         public string Text
         {
@@ -77,6 +85,11 @@ namespace WpfApplication
             TextView = "";
         }
 
+        protected void OpenSecondWindow()
+        {
+            SecondWindow sw = new SecondWindow();
+            sw.ShowDialog();
+        }
         // Create the OnPropertyChanged method to raise the event
         // The calling member's name will be used as the parameter.
         protected void OnPropertyChanged([CallerMemberName] string name = null)
