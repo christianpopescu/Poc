@@ -11,7 +11,13 @@
         <TextBox HorizontalAlignment="Left" Height="65" Margin="441,59,0,0" TextWrapping="Wrap" Text="{Binding TextView}" VerticalAlignment="Top" Width="205"/>
         <Button Content="Transform" HorizontalAlignment="Left" Height="23" Margin="287,79,0,0" VerticalAlignment="Top" Width="65" Command="{Binding OnTransformButton}"/>
         <Button Content="Clear" HorizontalAlignment="Left" Height="20" Margin="287,169,0,0" VerticalAlignment="Top" Width="65" Command="{Binding OnClear}"/>
-        <Button Content="Second Functionality" HorizontalAlignment="Left" Height="28" Margin="217,357,0,0" VerticalAlignment="Top" Width="135" Command="{Binding OnOpenSecondWindow}"/>
+        <Button Content="Second Functionality" 
+                HorizontalAlignment="Left" 
+                Height="28" 
+                Margin="217,357,0,0" 
+                VerticalAlignment="Top" 
+                Width="135" 
+                Command="{Binding OnOpenSecondWindow}"/>
 
     </Grid>
 </Window>
