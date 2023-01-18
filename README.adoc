@@ -24,4 +24,7 @@ The purpose of this repository is to keep small POC projects.
 | *09-PocWpfMVVMCSharp*
 | Poc WPF C# basic structure for MVVM. There will be netcore project
 
+| *10-PocNetFrameworkHelperLibrary*
+| Poc Net Core library helpers modules elements, search file and folders, etc.
+
 |====
