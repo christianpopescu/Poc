@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHelperLibrary", "PocHelperLibrary\PocHelperLibrary.csproj", "{02C20FB1-C656-4F70-A97A-1475496C23C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocHelperLibraryDev", "PocHelperLibraryDev\PocHelperLibraryDev.csproj", "{9C1E70A0-0422-467D-B4A1-09B8FBAB9928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{02C20FB1-C656-4F70-A97A-1475496C23C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C20FB1-C656-4F70-A97A-1475496C23C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C20FB1-C656-4F70-A97A-1475496C23C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1E70A0-0422-467D-B4A1-09B8FBAB9928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1E70A0-0422-467D-B4A1-09B8FBAB9928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1E70A0-0422-467D-B4A1-09B8FBAB9928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1E70A0-0422-467D-B4A1-09B8FBAB9928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
