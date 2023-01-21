@@ -1,0 +1,13 @@
+= Worklog of 10-PocNetFrameworkHelperLibrary
+Doc Writer <christian.popescu@outlook.com>
+v 1.1, 2023-01-20
+:sectnums:
+:toc:
+:toclevels: 5
+
+
+https://github.com/christianpopescu/Poc/tree/master/10-PocNetFrameworkHelperLibrary
+
+== 20/01/2023
+
+image::img/01-file_helper_abstract_data_helper.png[]
