@@ -69,7 +69,7 @@ namespace PocHelperLibrary.FileHelper
         /// <param name="pOutputLine"></param>
         /// <returns></returns>
 
-        public bool ProcessLIne(string pLine, out string pOutputLine)
+        public bool ProcessLine(string pLine, ref string pOutputLine)
         {
             pOutputLine = "";
             bool processed = false;
@@ -81,6 +81,7 @@ namespace PocHelperLibrary.FileHelper
                 {
                     
                     pOutputLine = pLine.Replace(beginPattern + match.Value + endPattern, exchangeDictionary[match.Value]);
+                    pLine = pOutputLine;
                     processed = true;                }
                   
             }

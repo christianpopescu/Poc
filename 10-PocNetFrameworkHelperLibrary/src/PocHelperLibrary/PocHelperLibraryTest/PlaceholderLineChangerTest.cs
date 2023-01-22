@@ -19,7 +19,7 @@ namespace PocHelperLibraryTest
         }
 
         [Test]
-        public void TestLinePatternDetecFalse() 
+        public void TestLinePatternDetectFalse() 
         {
             
             DataGeneratorService dgs = new DataGeneratorService();
@@ -32,7 +32,7 @@ namespace PocHelperLibraryTest
         }
 
         [Test]
-        public void TestLinePatternDetecTrue()
+        public void TestLinePatternDetectTrue()
         {
 
             DataGeneratorService dgs = new DataGeneratorService();
@@ -45,5 +45,24 @@ namespace PocHelperLibraryTest
             Assert.AreEqual(true, plc.IsLineToProcess("   {{bcd}}   {{abc}} 1111"));
         }
 
+        [Test]
+        public void TestLineTransform()
+        {
+            DataGeneratorService dgs = new DataGeneratorService();
+
+            PlaceholderLineChanger plc = new PlaceholderLineChanger(dgs.GetPlacehoderDictionary());
+
+            string result = "";
+            plc.ProcessLine("{{abc}}", ref result);
+            Assert.AreEqual("123", result);
+            plc.ProcessLine("{{bcd}}", ref result);
+            Assert.AreEqual("345", result);
+            plc.ProcessLine("A{{abc}}", ref result);
+            Assert.AreEqual("A123", result);
+            plc.ProcessLine("{{abc}}B", ref result);
+            Assert.AreEqual("123B", result);
+            plc.ProcessLine("A{{abc}}B{{bcd}}XX", ref result);
+            Assert.AreEqual("A123B345XX", result);
+        }
     }
 }
