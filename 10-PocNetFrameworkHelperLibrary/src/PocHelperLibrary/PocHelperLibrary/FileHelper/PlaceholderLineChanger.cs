@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -49,7 +50,15 @@ namespace PocHelperLibrary.FileHelper
         {
             Regex rx = new Regex(regexPattern);
             MatchCollection matches = rx.Matches(pLine);
-            return matches.Count > 0;
+            if (matches.Count == 0) return false;
+            foreach (Match match in matches)
+            {
+                if (exchangeDictionary.ContainsKey(match.Value))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
