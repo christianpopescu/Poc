@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace PocHelperLibrary.FileHelper
 {
@@ -88,6 +89,23 @@ namespace PocHelperLibrary.FileHelper
             if (!processed) { pOutputLine = pLine; }
 
             return processed;
+        }
+
+        public string ProcessLine(string pInputLine)
+        {
+            string outputLine = pInputLine;
+            Regex rx = new Regex(regexPattern);
+            MatchCollection matches = rx.Matches(pInputLine);
+            foreach (Match match in matches)
+            {
+                if (exchangeDictionary.ContainsKey(match.Value))
+                {
+
+                    outputLine = outputLine.Replace(beginPattern + match.Value + endPattern, exchangeDictionary[match.Value]);
+                }
+
+            }
+            return outputLine;
         }
     }
 }

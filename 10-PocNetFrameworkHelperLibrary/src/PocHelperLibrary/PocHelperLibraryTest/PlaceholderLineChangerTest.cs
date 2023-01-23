@@ -64,5 +64,19 @@ namespace PocHelperLibraryTest
             plc.ProcessLine("A{{abc}}B{{bcd}}XX", ref result);
             Assert.AreEqual("A123B345XX", result);
         }
+
+        [Test]
+        public void TetsLineTransformNew()
+        {
+            DataGeneratorService dgs = new DataGeneratorService();
+
+            PlaceholderLineChanger plc = new PlaceholderLineChanger(dgs.GetPlacehoderDictionary());
+
+            Assert.AreEqual("123", plc.ProcessLine("{{abc}}"));
+            Assert.AreEqual("345", plc.ProcessLine("{{bcd}}"));
+            Assert.AreEqual("A123", plc.ProcessLine("A{{abc}}"));
+            Assert.AreEqual("123B", plc.ProcessLine("{{abc}}B"));
+            Assert.AreEqual("A123B345XX", plc.ProcessLine("A{{abc}}B{{bcd}}XX"));
+        }
     }
 }
