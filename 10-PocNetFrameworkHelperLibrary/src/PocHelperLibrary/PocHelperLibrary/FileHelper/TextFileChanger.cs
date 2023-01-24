@@ -34,7 +34,7 @@ namespace FileHelper
 
             foreach (var ln in FileContent)
             {
-                output.WriteLine(aLineChanger.IsLineToProcess(ln) ? aLineChanger.Process(ln) : ln);
+                output.WriteLine(aLineChanger.IsLineToProcess(ln) ? aLineChanger.ProcessLine(ln) : ln);
             }
 
             File.Replace(TmpFile, InputFile, BackupFile);

@@ -9,7 +9,7 @@ using System.Xml;
 
 namespace PocHelperLibrary.FileHelper
 {
-    public class PlaceholderLineChanger
+    public class PlaceholderLineChanger : ILineChanger
     {
         protected IDictionary<string, string> exchangeDictionary = null;
 
