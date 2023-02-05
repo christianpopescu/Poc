@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,24 @@ namespace WpfAppPocCharpSqLite
             InitializeComponent();
             ImageToShow.Source = new BitmapImage(new Uri(@"D:\Temp\DentsdeMidi5.png"));
             //ImageToShow.Source = new BitmapImage(new Uri(@"DentsdeMidi5.png", UriKind.Relative));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = "d:\\users";
+            dlg.Filter = "Image files (*.png)|*.png|All Files (*.*)|*.*";
+            dlg.RestoreDirectory = true;
+
+            if (dlg.ShowDialog() == true)
+            {
+                string selectedFileName = dlg.FileName;
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(selectedFileName);
+                bitmap.EndInit();
+                ImageToShow.Source = bitmap;
+            }
         }
     }
 }

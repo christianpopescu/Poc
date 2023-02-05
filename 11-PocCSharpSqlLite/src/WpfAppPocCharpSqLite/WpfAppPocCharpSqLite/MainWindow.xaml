@@ -9,6 +9,7 @@
     <Grid>
         <Image Name="ImageToShow" HorizontalAlignment="Left" Height="299" Margin="136,74,0,0" VerticalAlignment="Top" Width="587"
                />
+        <Button Content="LoadImage" HorizontalAlignment="Left" Margin="31,34,0,0" VerticalAlignment="Top" Height="33" Width="77" Click="Button_Click"/>
 
     </Grid>
 </Window>
