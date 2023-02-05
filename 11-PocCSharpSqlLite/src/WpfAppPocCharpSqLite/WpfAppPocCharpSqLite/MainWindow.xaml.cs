@@ -23,6 +23,8 @@ namespace WpfAppPocCharpSqLite
         public MainWindow()
         {
             InitializeComponent();
+            ImageToShow.Source = new BitmapImage(new Uri(@"D:\Temp\DentsdeMidi5.png"));
+            //ImageToShow.Source = new BitmapImage(new Uri(@"DentsdeMidi5.png", UriKind.Relative));
         }
     }
 }
