@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocTcpServer", "PocTcpServer\PocTcpServer.csproj", "{8F161CBC-E97A-49A4-BD64-2F16CCDFD80A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F161CBC-E97A-49A4-BD64-2F16CCDFD80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F161CBC-E97A-49A4-BD64-2F16CCDFD80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F161CBC-E97A-49A4-BD64-2F16CCDFD80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F161CBC-E97A-49A4-BD64-2F16CCDFD80A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D2C759A-AA80-48DE-B199-98A226465FEC}
+	EndGlobalSection
+EndGlobal
