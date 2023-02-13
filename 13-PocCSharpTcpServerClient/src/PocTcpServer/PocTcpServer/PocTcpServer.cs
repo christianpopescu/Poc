@@ -7,7 +7,13 @@ using System.Text;
 
 namespace PocTcpServer
 {
+    record PocTcpServerOptions
+    {
+        public int Port { get; init; }
+    }
     internal class PocTcpServer
     {
+        private readonly int _port;
+        private readonly ILogger _logger;
     }
 }
