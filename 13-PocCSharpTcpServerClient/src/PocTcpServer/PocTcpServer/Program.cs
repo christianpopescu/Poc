@@ -1,10 +1,15 @@
 ﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+//using PocTcpServer;
 
-class Program
-{
-    public static int Main(String[] args)
+using var host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((context, services) =>
     {
+        var settings = context.Configuration;
+        services.Configure<PocTcpServerOptions>(settings.GetSection("PocTcpServer"));
+        services.AddTransient<PocTcpServer>();
+    })
+    .Build();
 
-        return 0;
-    }
-}
+Console.WriteLine("Running");
