@@ -12,4 +12,26 @@ using var host = Host.CreateDefaultBuilder(args)
     })
     .Build();
 
-Console.WriteLine("Running");
+var logger = host.Services.GetRequiredService<ILoggerFactory>().CreateLogger("PocTcpServer");
+
+CancellationTokenSource cancellationTokenSource = new();
+
+Console.CancelKeyPress += (sender, e) =>
+{
+    logger.LogInformation("cancellation initiated by the user");
+    cancellationTokenSource.Cancel();
+};
+
+try
+{
+    var service = host.Services.GetRequiredService<PocTcpServer>();
+    
+    await service.RunServerAsync(cancellationTokenSource.Token);
+
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, ex.Message);
+    Environment.Exit(-1);
+}
+Console.ReadLine();
