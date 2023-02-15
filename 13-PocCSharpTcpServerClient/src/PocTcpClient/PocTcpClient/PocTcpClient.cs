@@ -28,6 +28,7 @@ class PocTcpClient
         try
         {
             Memory<byte> buffer = new byte[4096].AsMemory();
+            Memory<byte> bufferIn = new byte[4096].AsMemory();
             string? line;
             bool repeat = true;
             while (repeat)
@@ -43,9 +44,12 @@ class PocTcpClient
                     TcpClient client = new();
                     await client.ConnectAsync(_hostname, _serverPort, cancellationToken);
                     using var stream = client.GetStream();
-                    int bytesRead = await stream.ReadAsync(buffer, cancellationToken);
-                    string answer = Encoding.UTF8.GetString(buffer.Span[..bytesRead]);
-                    buffer.Span[..bytesRead].Clear();
+                    buffer = Encoding.UTF8.GetBytes(line).AsMemory();
+                    await stream.WriteAsync(buffer, cancellationToken);
+                    
+                    int bytesRead = await stream.ReadAsync(bufferIn, cancellationToken);
+                    string answer = Encoding.UTF8.GetString(bufferIn.Span[..bytesRead]);
+                    bufferIn.Span[..bytesRead].Clear();
                     Console.WriteLine(answer);
                     Console.WriteLine();
                 }
