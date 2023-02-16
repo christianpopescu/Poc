@@ -44,28 +44,6 @@ class PocTcpServer
         }
     }
 
-    private async Task SendAnswerAsync(TcpClient client, CancellationToken cancellationToken = default)
-    {
-        try
-        {
-            client.LingerState = new LingerOption(true, 10);
-            client.NoDelay = true;
-
-            using var stream = client.GetStream(); // returns a stream that owns the socket
-            string answer = "Answer from server";
-            var buffer = Encoding.UTF8.GetBytes(answer).AsMemory();
-            await stream.WriteAsync(buffer, cancellationToken);
-        }
-        catch (IOException ex)
-        {
-            _logger.LogError(ex, ex.Message);
-        }
-        catch (SocketException ex)
-        {
-            _logger.LogError(ex, ex.Message);
-        }
-    }
-
     private async Task SendMessageAsync(TcpClient client, string message, CancellationToken cancellationToken = default)
     {
         try
