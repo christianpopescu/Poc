@@ -40,6 +40,7 @@ class PocTcpServer
             using TcpClient client = await listener.AcceptTcpClientAsync();
             _logger.LogInformation("Client connected with address and port: {port}", client.Client.RemoteEndPoint);
             string message = await ReadMessageAsync(client,cancellationToken);
+            _logger.LogInformation("Message received " + message);
             var _ = SendMessageAsync(client, message, cancellationToken);
         }
     }
@@ -48,8 +49,8 @@ class PocTcpServer
     {
         try
         {
-            client.LingerState = new LingerOption(true, 10);
-            client.NoDelay = true;
+            //client.LingerState = new LingerOption(true, 10);
+            //client.NoDelay = true;
 
             using var stream = client.GetStream(); // returns a stream that owns the socket
             var buffer = Encoding.UTF8.GetBytes(message).AsMemory();
@@ -78,7 +79,10 @@ class PocTcpServer
                                                    //await stream.WriteAsync(buffer, cancellationToken);
             int bytesRead = await stream.ReadAsync(buffer, cancellationToken);
             string answer = Encoding.UTF8.GetString(buffer.Span[..bytesRead]);
+
             buffer.Span[..bytesRead].Clear();
+            buffer = Encoding.UTF8.GetBytes(answer).AsMemory();
+            await stream.WriteAsync(buffer, cancellationToken);
             return answer;
         }
         catch (IOException ex)
