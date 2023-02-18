@@ -81,7 +81,9 @@ class PocTcpServer
             string answer = Encoding.UTF8.GetString(buffer.Span[..bytesRead]);
 
             buffer.Span[..bytesRead].Clear();
-            buffer = Encoding.UTF8.GetBytes(answer).AsMemory();
+            StringBuilder sb = new();
+            sb.AppendLine(answer).AppendLine("-----").AppendLine(answer);
+            buffer = Encoding.UTF8.GetBytes(sb.ToString()).AsMemory();
             await stream.WriteAsync(buffer, cancellationToken);
             return answer;
         }

@@ -46,7 +46,7 @@ class PocTcpClient
                     using var stream = client.GetStream();
                     buffer = Encoding.UTF8.GetBytes(line).AsMemory();
                     await stream.WriteAsync(buffer, cancellationToken);
-                    Thread.Sleep(30000);
+                    //Thread.Sleep(30000);
                     int bytesRead = await stream.ReadAsync(bufferIn, cancellationToken);
                     string answer = Encoding.UTF8.GetString(bufferIn.Span[..bytesRead]);
                     bufferIn.Span[..bytesRead].Clear();
