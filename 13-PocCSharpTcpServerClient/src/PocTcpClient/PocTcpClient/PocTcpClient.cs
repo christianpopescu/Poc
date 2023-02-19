@@ -31,6 +31,9 @@ class PocTcpClient
             Memory<byte> bufferIn = new byte[4096].AsMemory();
             string? line;
             bool repeat = true;
+            TcpClient client = new();
+            await client.ConnectAsync(_hostname, _serverPort, cancellationToken);
+            using var stream = client.GetStream();
             while (repeat)
             {
                 Console.WriteLine(@"Press <enter> to request answer from server, ""exit"" to exit");
@@ -41,9 +44,7 @@ class PocTcpClient
                 }
                 else
                 {
-                    TcpClient client = new();
-                    await client.ConnectAsync(_hostname, _serverPort, cancellationToken);
-                    using var stream = client.GetStream();
+
                     buffer = Encoding.UTF8.GetBytes(line).AsMemory();
                     await stream.WriteAsync(buffer, cancellationToken);
                     //Thread.Sleep(30000);

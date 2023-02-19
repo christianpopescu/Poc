@@ -34,14 +34,19 @@ class PocTcpServer
         _logger.LogInformation("Poc Tcp Server listener started on port {port}", _port);
         listener.Start();
 
+        using TcpClient client = await listener.AcceptTcpClientAsync();
+        client.LingerState = new LingerOption(true, 10);
+        client.NoDelay = true;
+        using var stream = client.GetStream();
+
         while (true)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            using TcpClient client = await listener.AcceptTcpClientAsync();
+            
             _logger.LogInformation("Client connected with address and port: {port}", client.Client.RemoteEndPoint);
-            string message = await ReadMessageAsync(client,cancellationToken);
+            string message = await ReadMessageAsyncStream(stream, cancellationToken);
             _logger.LogInformation("Message received " + message);
-            var _ = SendMessageAsync(client, message, cancellationToken);
+            //var _ = SendMessageAsync(client, message, cancellationToken);
         }
     }
 
@@ -71,8 +76,6 @@ class PocTcpServer
         try
         {
             Memory<byte> buffer = new byte[4096].AsMemory();
-            client.LingerState = new LingerOption(true, 10);
-            client.NoDelay = true;
 
             using var stream = client.GetStream(); // returns a stream that owns the socket
                                                    //var buffer = Encoding.UTF8.GetBytes(message).AsMemory();
@@ -98,6 +101,38 @@ class PocTcpServer
             return "";
         }
     }
+
+    private async Task<string> ReadMessageAsyncStream(NetworkStream stream, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            Memory<byte> buffer = new byte[4096].AsMemory();
+ 
+           // using var stream = client.GetStream(); // returns a stream that owns the socket
+                                                   //var buffer = Encoding.UTF8.GetBytes(message).AsMemory();
+                                                   //await stream.WriteAsync(buffer, cancellationToken);
+            int bytesRead = await stream.ReadAsync(buffer, cancellationToken);
+            string answer = Encoding.UTF8.GetString(buffer.Span[..bytesRead]);
+
+            buffer.Span[..bytesRead].Clear();
+            StringBuilder sb = new();
+            sb.AppendLine(answer).AppendLine("-----").AppendLine(answer);
+            buffer = Encoding.UTF8.GetBytes(sb.ToString()).AsMemory();
+            await stream.WriteAsync(buffer, cancellationToken);
+            return answer;
+        }
+        catch (IOException ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            return "";
+        }
+        catch (SocketException ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            return "";
+        }
+    }
+
 
 }
 
