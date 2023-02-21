@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication"
         mc:Ignorable="d"
-        Title="Poc WPF MVVM" Height="450" Width="800">
+        Title="Poc WPF MVVM" Height="531" Width="953">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="65" Margin="44,59,0,0" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="173"/>
         <TextBox HorizontalAlignment="Left" Height="65" Margin="441,59,0,0" TextWrapping="Wrap" Text="{Binding TextView}" VerticalAlignment="Top" Width="205"/>
@@ -14,10 +14,19 @@
         <Button Content="Second Functionality" 
                 HorizontalAlignment="Left" 
                 Height="28" 
-                Margin="217,357,0,0" 
+                Margin="82,341,0,0" 
                 VerticalAlignment="Top" 
                 Width="135" 
                 Command="{Binding OnOpenSecondWindow}"/>
+        <ListView x:Name="lstNames" Margin="356,304,131,59">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

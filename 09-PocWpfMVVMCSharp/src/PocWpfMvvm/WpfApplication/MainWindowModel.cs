@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -75,9 +76,13 @@ namespace WpfApplication
             set { _textView = value; OnPropertyChanged(); }
         }
 
+        public System.Collections.ObjectModel.ObservableCollection<ListElement> ListOfElements = new ();
+
+        // Transform action add elements also to the list
         protected void TransformAction ()
         {
             TextView = Text + "\n" + Text + "\nTransformed";
+            ListOfElements.Add(new ListElement(Text, Text, Text.Length));
         } 
 
         protected void ClearAction () 

@@ -25,6 +25,7 @@ namespace WpfApplication
         {
             InitializeComponent();
             this.DataContext = theModel;
+            this.lstNames.ItemsSource = theModel.ListOfElements;
         }
     }
 }
