@@ -26,6 +26,19 @@ namespace WpfApplication
             InitializeComponent();
             this.DataContext = theModel;
             this.lstNames.ItemsSource = theModel.ListOfElements;
+            TreeViewItem tvi = new();
+            tvi.Header = "Root";
+            
+            TreeViewItem sun = new();
+            sun.Header = "sun 01";
+            tvi.Items.Add(sun);
+
+            TreeViewItem sun1 = new();
+            sun1.Header = "sun 02";
+            tvi.Items.Add(sun1);
+
+
+            this.treeBooks.Items.Add(tvi);
         }
     }
 }

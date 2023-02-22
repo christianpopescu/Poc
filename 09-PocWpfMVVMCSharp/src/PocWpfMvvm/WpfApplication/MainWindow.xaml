@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication"
         mc:Ignorable="d"
-        Title="Poc WPF MVVM" Height="531" Width="953">
+        Title="Poc WPF MVVM" Height="1031" Width="1253">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="65" Margin="44,59,0,0" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="173"/>
         <TextBox HorizontalAlignment="Left" Height="65" Margin="441,59,0,0" TextWrapping="Wrap" Text="{Binding TextView}" VerticalAlignment="Top" Width="205"/>
@@ -18,7 +18,7 @@
                 VerticalAlignment="Top" 
                 Width="135" 
                 Command="{Binding OnOpenSecondWindow}"/>
-        <ListView x:Name="lstNames" Margin="356,304,131,59">
+        <ListView x:Name="lstNames" Margin="392,325,392,441">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"/>
@@ -27,6 +27,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TreeView x:Name="treeBooks" Margin="392,607,592,159"/>
 
     </Grid>
 </Window>
