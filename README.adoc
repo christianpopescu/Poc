@@ -27,4 +27,14 @@ The purpose of this repository is to keep small POC projects.
 | *10-PocNetFrameworkHelperLibrary*
 | Poc Net Core library helpers modules elements, search file and folders, etc.
 
+| ... to fill
+|
+
+| *14-PocCShaprWpfWithoutXaml*
+| Poc Net Core WPF application without XAML, only with code.
+
+| *15-PocCShaprFileCompare*
+| Poc Net Core to compute Hash of files, and to compare file as binary.
+
+
 |====
