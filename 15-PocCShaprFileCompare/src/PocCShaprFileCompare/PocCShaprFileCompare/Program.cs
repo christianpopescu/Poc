@@ -1,13 +1,19 @@
-﻿using System.Security.Cryptography;
+﻿using PocCShaprFileCompare;
+using System.Security.Cryptography;
 
 Console.WriteLine("HashValue");
 string FilePath = @"E:\CCP_library\Doc\books_2016\2016_2\21st Century C.pdf";
+FileHelper MD5FileHelper = new(new MD5CryptoServiceProvider());
+FileHelper SHA1FileHelper = new(new SHA1CryptoServiceProvider());
+FileHelper SHA256FileHelper = new(new SHA256CryptoServiceProvider());
+FileHelper SHA384FileHelper = new(new SHA384CryptoServiceProvider());
+FileHelper SHA512FileHelper = new(new SHA512CryptoServiceProvider());
 
-Console.WriteLine("MD5 Hash Code  : {0}", ComputeFielHash(FilePath, new MD5CryptoServiceProvider()));
-Console.WriteLine("SHA1 Hash Code  : {0}", ComputeFielHash(FilePath, new SHA1CryptoServiceProvider()));
-Console.WriteLine("SHA256 Hash Code: {0}", ComputeFielHash(FilePath, new SHA256CryptoServiceProvider()));
-Console.WriteLine("SHA384 Hash Code: {0}", ComputeFielHash(FilePath, new SHA384CryptoServiceProvider()));
-Console.WriteLine("SHA512 Hash Code: {0}", ComputeFielHash(FilePath, new SHA512CryptoServiceProvider()));
+Console.WriteLine("MD5 Hash Code  : {0}", MD5FileHelper.ComputeFielHash(FilePath));
+Console.WriteLine("SHA1 Hash Code  : {0}", SHA1FileHelper.ComputeFielHash(FilePath));
+Console.WriteLine("SHA256 Hash Code: {0}", SHA256FileHelper.ComputeFielHash(FilePath));
+Console.WriteLine("SHA384 Hash Code: {0}", SHA384FileHelper.ComputeFielHash(FilePath));
+Console.WriteLine("SHA512 Hash Code: {0}", SHA512FileHelper.ComputeFielHash(FilePath));
 static string ComputeFielHash (string filePath, HashAlgorithm cryptographySevice)
 {
     
