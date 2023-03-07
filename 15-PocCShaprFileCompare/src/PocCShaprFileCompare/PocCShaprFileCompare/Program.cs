@@ -1,5 +1,9 @@
 ﻿using PocCShaprFileCompare;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+
+
 
 Console.WriteLine("HashValue");
 string FilePath = @"E:\CCP_library\Doc\books_2016\2016_2\21st Century C.pdf";
@@ -14,6 +18,13 @@ Console.WriteLine("SHA1 Hash Code  : {0}", SHA1FileHelper.ComputeFielHash(FilePa
 Console.WriteLine("SHA256 Hash Code: {0}", SHA256FileHelper.ComputeFielHash(FilePath));
 Console.WriteLine("SHA384 Hash Code: {0}", SHA384FileHelper.ComputeFielHash(FilePath));
 Console.WriteLine("SHA512 Hash Code: {0}", SHA512FileHelper.ComputeFielHash(FilePath));
+
+Console.WriteLine("File compare");
+
+string FileFirst = @"E:\CCP_library\Doc_2015\books_2014\2014_04\Managing the Testing Process, 3rd Edition (1).pdf";
+string FileSecond = @"E:\CCP_library\Doc_2015\books_2014\2014_04\Local Binary Patterns.pdf";
+Console.WriteLine(FileHelper.FilesEqual(FileFirst, FileSecond));
+
 static string ComputeFielHash (string filePath, HashAlgorithm cryptographySevice)
 {
     
@@ -31,3 +42,5 @@ static string ComputeFielHash (string filePath, HashAlgorithm cryptographySevice
     }
 
 }
+
+
