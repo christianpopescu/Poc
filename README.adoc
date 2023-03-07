@@ -27,8 +27,11 @@ The purpose of this repository is to keep small POC projects.
 | *10-PocNetFrameworkHelperLibrary*
 | Poc Net Core library helpers modules elements, search file and folders, etc.
 
-| ... to fill
-|
+| *11-PocCSharpSqlLite*
+| Wpf application that should use SqlLite
+
+| *12-PocCSharpConsoleWinForm*
+| Poc Net Core that opens WinForm Dialog (OpenFileDialog) from a console application.
 
 | *14-PocCShaprWpfWithoutXaml*
 | Poc Net Core WPF application without XAML, only with code.
@@ -38,3 +41,7 @@ The purpose of this repository is to keep small POC projects.
 
 
 |====
+
+== 11-PocCSharpSqlLite
+
+For the moment it loads images from disk and shows them in WPF application. Also load PDF pages as images.
