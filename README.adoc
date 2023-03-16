@@ -1,6 +1,6 @@
 = POC
 Doc Writer <christian.popescu@outlook.com>
-v 1.0, 2022-12-17
+v 1.1, 2023-03-16
 :sectnums:
 :toc:
 :toclevels: 5
@@ -38,6 +38,9 @@ The purpose of this repository is to keep small POC projects.
 
 | *15-PocCShaprFileCompare*
 | Poc Net Core to compute Hash of files, and to compare file as binary.
+
+| *16-PocCShaprOracle*
+| Poc Net Core connect to Oracle Database.
 
 
 |====

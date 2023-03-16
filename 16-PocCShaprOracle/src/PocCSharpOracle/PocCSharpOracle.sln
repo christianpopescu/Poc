@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocCSharpOracle", "PocCSharpOracle\PocCSharpOracle.csproj", "{59714676-B2F1-4FFF-B3D8-AD698F3882AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59714676-B2F1-4FFF-B3D8-AD698F3882AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59714676-B2F1-4FFF-B3D8-AD698F3882AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59714676-B2F1-4FFF-B3D8-AD698F3882AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59714676-B2F1-4FFF-B3D8-AD698F3882AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DF9FA6C-8CB9-4A3F-8EC4-B797A0CC12D0}
+	EndGlobalSection
+EndGlobal
