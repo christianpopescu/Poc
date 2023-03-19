@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PocCSharpOracle
 {
-    internal class Configcs
+    internal class Config
     {
+        private Config () { }
+
+        public static Config Instance { get;  } = new Config ();
+        
+
     }
 }
