@@ -12,6 +12,7 @@ namespace PocCSharpOracle
 
         public static Config Instance { get;  } = new Config ();
         
+        public string OracleConnectionString { get; private set; }
 
     }
 }
