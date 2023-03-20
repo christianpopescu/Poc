@@ -8,7 +8,10 @@ namespace PocCSharpOracle
 {
     internal class Config
     {
-        private Config () { }
+        private Config ()
+        {
+            OracleConnectionString = "";
+        }
 
         public static Config Instance { get;  } = new Config ();
         
