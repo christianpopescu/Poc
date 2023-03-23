@@ -6,7 +6,10 @@ This is the documentation for wx widget poc
 
 ## Code
 
+
 ``` C++
+
+
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
 #include <wx/wx.h>
