@@ -26,10 +26,12 @@ private:
 };
 enum
 {
-    ID_Hello = 1
+    ID_Hello = 1,
+    ID_MenuItem = 2
 };
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 EVT_MENU(ID_Hello, MyFrame::OnHello)
+EVT_MENU(ID_MenuItem, MyFrame::OnMenuItem)
 EVT_MENU(wxID_EXIT, MyFrame::OnExit)
 EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
 wxEND_EVENT_TABLE()
@@ -46,6 +48,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
     wxMenu* menuFile = new wxMenu;
     menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
         "Help string shown in status bar for this menu item");
+    menuFile->Append(ID_MenuItem, "Menu Item &Selected...\tCtrl-S",
+        "Menu Item Selected hemp in status bar for this menu item");
+
     menuFile->AppendSeparator();
     menuFile->Append(wxID_EXIT);
     wxMenu* menuHelp = new wxMenu;
@@ -64,9 +69,14 @@ void MyFrame::OnExit(wxCommandEvent& event)
 void MyFrame::OnAbout(wxCommandEvent& event)
 {
     wxMessageBox("This is a wxWidgets' Hello world sample",
-        "About Hello World", wxOK | wxICON_INFORMATION);
+        "About Sandbox wxWidgets", wxOK | wxICON_INFORMATION);
 }
 void MyFrame::OnHello(wxCommandEvent& event)
 {
-    wxLogMessage("Hello world from wxWidgets!");
+    wxLogMessage("Hello world from  Sandbox wxWidgets!");
+}
+
+void MyFrame::OnMenuItem(wxCommandEvent& event)
+{
+    wxLogMessage("Menu Item Selected!");
 }
