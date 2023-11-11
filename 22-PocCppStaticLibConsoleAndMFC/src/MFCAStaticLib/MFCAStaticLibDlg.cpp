@@ -106,10 +106,10 @@ BOOL CMFCAStaticLibDlg::OnInitDialog()
 	// TODO: Add extra initialization here
 	std::vector<std::string> res = getFilesList("d://temp//diana_christian");
 	
-//	std::string all;
-///	for (auto& s : res) { all += (s + '\n'); }
-	//CString temp(all.c_str());
-	m_edit_files;// = temp;
+	std::string all;
+	for (auto& s : res) { all += (s  +'\r' + '\n'); }
+	CString temp(all.c_str());
+	m_edit_files = temp;
 	UpdateData(false);      // to load data into screen controls
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }

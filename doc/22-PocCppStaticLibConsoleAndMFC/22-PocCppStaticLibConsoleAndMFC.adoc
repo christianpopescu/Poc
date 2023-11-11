@@ -23,3 +23,30 @@ Steps:
 * Parameter console application to link to the static library (see image).
 
 image::img/link_static_libary.png[]
+
+
+* Create MFC Project of type dialog
+
+* Link the static library as for the console application
+
+
+=== Key points for MFC linked to static library
+
+
+image::img/Scrin showin list of elements.png[]
+
+
+image::img/Ressource file with Edit text.png[]
+
+* Add member function that corresponds to control.
+
+image::img/Field corresponding to control.png[]
+
+* Link between control and member added in DoDataExchange.
+
+image::img/Link between control and member added.png[]
+
+* Fill the field from the static library and refresh the window.
+
+image::img/Fill field from static library.png[]
+
