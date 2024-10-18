@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Text;
+using System.Windows.Forms;
+using ConsoleWinForm;
 
 class Program
 {
@@ -6,10 +8,25 @@ class Program
     static void Main(string[] args)
     {
         // Display the number of command line arguments.
-        Console.WriteLine("The console has been started");
+
         string selection = SelectionForm();
         Console.WriteLine(selection);
         switch (selection)
+        {
+            case "Select File":
+                SelectFileDialog();
+                break;
+            case "Create Dialog":
+                CreateMyForm();
+                break;
+
+        }
+        StringBuilder returnValue = new StringBuilder();
+        Form form = new ComboBoxForm(returnValue);
+        form.ShowDialog();
+
+        string sel = returnValue.ToString();
+        switch (sel)
         {
             case "Select File":
                 SelectFileDialog();
