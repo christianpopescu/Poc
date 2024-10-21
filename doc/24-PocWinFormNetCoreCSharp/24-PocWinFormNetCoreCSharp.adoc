@@ -18,3 +18,36 @@ The purpose is:
 
 == Steps
 
+.  Create project Console C# Net Core
++
+image::img/Startin_project_console_all_environments.png[]
++
+with the following settings
++
+image::img/Startin_project_console_all_environments_settings.png[]
++
+. Change the project settings
++
+image::img/Change project settings.png[]
++
+. Change the program file as indicated
+
+Note: Use a form created as Windows.Form
+
+[source, C#]
+----
+using System.Windows.Forms;
+
+namespace PocWindowsFormCSharp
+{
+    internal class Program
+    {
+        [STAThread()]
+         static void Main(string[] args)
+        {
+             Form form = new FormOkCancel();
+             form.ShowDialog();
+        }
+    }
+}
+----
