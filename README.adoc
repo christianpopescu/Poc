@@ -42,8 +42,32 @@ The purpose of this repository is to keep small POC projects.
 | *16-PocCShaprOracle*
 | Poc Net Core connect to Oracle Database.
 
+|
+|
 
+|
+|
+
+|
+|
+
+|
+|
+
+|
+|
+
+|
+|
+
+|
+|
+
+| 23-PocWinFormNetCoreCSharp
+|
 |====
+
+link:doc/PocDocumentation.adoc[Poc documentation detail]
 
 == 11-PocCSharpSqlLite
 
