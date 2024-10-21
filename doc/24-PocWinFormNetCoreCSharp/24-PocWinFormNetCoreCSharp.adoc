@@ -1,0 +1,20 @@
+= 23-PocWinFormNetCoreCSharp
+Doc Writer <christian.popescu@outlook.com>
+v 1.3, 2023-11-10
+:sectnums:
+:toc:
+:toclevels: 5
+:pdf-page-size: A3
+
+
+== Introduction
+
+Create solution Win Form Net Core without "wizards".
+
+The purpose is:
+
+* To allow to create simple applications without wizards that are used to deliver GUI pour tools.
+* To create simple Forms that could be used in other applications
+
+== Steps
+
