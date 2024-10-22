@@ -7,7 +7,7 @@ namespace PocWindowsFormCSharp
         [STAThread()]
         static void Main(string[] args)
         {
-            Form form = new FormOkCancel();
+            Form form = new SimpleActionForm();
             form.ShowDialog();
 
         }
