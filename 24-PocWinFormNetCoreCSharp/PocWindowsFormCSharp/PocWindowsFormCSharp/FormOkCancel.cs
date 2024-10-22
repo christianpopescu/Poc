@@ -13,17 +13,17 @@ namespace PocWindowsFormCSharp
 
         private void InitializeComponents()
         {
-            this.okButton.Location = new System.Drawing.Point(148, 32);
+            this.okButton.Location = new System.Drawing.Point(48, 500);
             this.okButton.Size = new System.Drawing.Size(80, 24);
             this.okButton.Text = "Ok";
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
 
-            this.cancelButton.Location = new System.Drawing.Point(148, 102);
+            this.cancelButton.Location = new System.Drawing.Point(148, 500);
             this.cancelButton.Size = new System.Drawing.Size(80, 24);
             this.cancelButton.Text = "Cancel";
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
 
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(700, 600);
             this.Controls.AddRange(new System.Windows.Forms.Control[] {this.okButton,
                         this.cancelButton});
             this.Text = "Form with OK Cancel buttons";
