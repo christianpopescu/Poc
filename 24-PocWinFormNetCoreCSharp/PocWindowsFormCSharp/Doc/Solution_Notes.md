@@ -6,3 +6,9 @@
 - output textbox
 - action button -> that calls the form OkCancel
 - Ok + Cancel buttons 
+
+3. Third solution:
+- Separation of the View from the Model
+- Initialize Model then passed to view
+- Action button modify output from input
+- On Ok data passed from View to model

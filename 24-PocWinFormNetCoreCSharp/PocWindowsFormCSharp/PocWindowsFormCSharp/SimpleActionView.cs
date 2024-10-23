@@ -15,13 +15,15 @@ namespace PocWindowsFormCSharp
     ///  - Ok + Cancel buttons
     /// </summary>
     
-    public class SimpleActionForm : System.Windows.Forms.Form
+    public class SimpleActionView : System.Windows.Forms.Form
     {
         private System.Windows.Forms.Button okButton = new Button();
         private System.Windows.Forms.Button cancelButton = new Button();
         private System.Windows.Forms.Button actionButton = new Button();
         private System.Windows.Forms.TextBox inputTextBox = new TextBox();
         private System.Windows.Forms.TextBox outputTextBox = new TextBox();
+
+        private SimpleActionModel theModel;
 
         private void InitializeComponents()
         {
@@ -58,9 +60,21 @@ namespace PocWindowsFormCSharp
             this.Text = "Form with OK Cancel buttons";
         }
 
+        private void ModelToView()
+        {
+            this.inputTextBox.Text = theModel.Input;
+            this.outputTextBox.Text = theModel.Output;
+        }
+
+        private void ViewToModel()
+        {
+            theModel.Input = this.inputTextBox.Text;
+            theModel.Output = this.outputTextBox.Text;
+        }
         private void okButton_Click(object sender, System.EventArgs e)
         {
             MessageBox.Show("OK Button has been pressed!");
+            ViewToModel();
             this.Dispose();
         }
 
@@ -75,12 +89,21 @@ namespace PocWindowsFormCSharp
             MessageBox.Show("Action - Button has been pressed!");
             Form form = new FormOkCancel();
             form.ShowDialog();
+            this.outputTextBox.Text = this.inputTextBox.Text + " : ";
+            this.Refresh();
+
                 
         }
 
-        public SimpleActionForm()
+        protected SimpleActionView()
         {
             InitializeComponents();
+        }
+        public SimpleActionView(SimpleActionModel theModel)
+        {
+            InitializeComponents();
+            this.theModel = theModel;
+            ModelToView();
         }
     }
 }

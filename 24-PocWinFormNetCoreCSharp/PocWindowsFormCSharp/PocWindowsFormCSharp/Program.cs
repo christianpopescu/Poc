@@ -7,8 +7,10 @@ namespace PocWindowsFormCSharp
         [STAThread()]
         static void Main(string[] args)
         {
-            Form form = new SimpleActionForm();
+            SimpleActionModel model = new SimpleActionModel() { Input = "ABCD" };
+            Form form = new SimpleActionView(model);
             form.ShowDialog();
+            MessageBox.Show(model.Output);
 
         }
     }
