@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace PocWindowsFormCSharp
 {
     
@@ -15,44 +10,41 @@ namespace PocWindowsFormCSharp
     ///  - Ok + Cancel buttons
     /// </summary>
     
-    public class SimpleActionView : System.Windows.Forms.Form
+    public class SimpleActionView : Form
     {
-        private System.Windows.Forms.Button okButton = new Button();
-        private System.Windows.Forms.Button cancelButton = new Button();
-        private System.Windows.Forms.Button actionButton = new Button();
-        private System.Windows.Forms.TextBox inputTextBox = new TextBox();
-        private System.Windows.Forms.TextBox outputTextBox = new TextBox();
+        private Button okButton = new Button();
+        private Button cancelButton = new Button();
+        private Button actionButton = new Button();
+        private TextBox inputTextBox = new TextBox();
+        private TextBox outputTextBox = new TextBox();
 
         private SimpleActionModel theModel;
 
+        private void InitButton (Button btn, Point point, Size size, string text, EventHandler eh)
+        {
+            btn.Location = point;
+            btn.Size = size;
+            btn.Text = text;
+            btn.Click += eh;
+
+        }
         private void InitializeComponents()
         {
-            this.okButton.Location = new System.Drawing.Point(48, 500);
-            this.okButton.Size = new System.Drawing.Size(80, 24);
-            this.okButton.Text = "Ok";
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            InitButton(this.okButton, new Point(48, 500), new Size(80, 24), "OK", new System.EventHandler(this.okButton_Click));
+            InitButton(this.cancelButton, new Point(148, 500), new Size(80, 24), "Cancerl", new System.EventHandler(this.cancelButton_Click));
+            InitButton(this.actionButton, new Point(40, 80), new Size(80, 24), "Action", new System.EventHandler(this.theModel.ActionDone));
 
-            this.cancelButton.Location = new System.Drawing.Point(148, 500);
-            this.cancelButton.Size = new System.Drawing.Size(80, 24);
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-
-            this.actionButton.Location = new System.Drawing.Point(40, 80);
-            this.actionButton.Size = new System.Drawing.Size(80, 24);
-            this.actionButton.Text = "Action";
-            this.actionButton.Click += new System.EventHandler(this.theModel.ActionDone); 
-
-            this.inputTextBox.Location = new System.Drawing.Point(40, 40);
-            this.inputTextBox.Size = new System.Drawing.Size(400, 24);
+            this.inputTextBox.Location = new Point(40, 40);
+            this.inputTextBox.Size = new Size(400, 24);
             this.inputTextBox.Multiline = false;
 
-            this.outputTextBox.Location = new System.Drawing.Point(40,120);
-            this.outputTextBox.Size = new System.Drawing.Size(400, 200);
+            this.outputTextBox.Location = new Point(40,120);
+            this.outputTextBox.Size = new Size(400, 200);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.ScrollBars = ScrollBars.Vertical;
 
-            this.ClientSize = new System.Drawing.Size(700, 600);
-            this.Controls.AddRange(new System.Windows.Forms.Control[] {this.okButton,
+            this.ClientSize = new Size(700, 600);
+            this.Controls.AddRange(new Control[] {this.okButton,
                 this.cancelButton,
                 this.actionButton,
                 this.inputTextBox,

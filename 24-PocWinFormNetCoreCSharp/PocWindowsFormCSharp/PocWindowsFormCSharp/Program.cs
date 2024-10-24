@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+﻿//using System.Windows.Forms;
 
 namespace PocWindowsFormCSharp
 {
@@ -7,6 +7,7 @@ namespace PocWindowsFormCSharp
         [STAThread()]
         static void Main(string[] args)
         {
+            
             SimpleActionModel model = new SimpleActionModel() { Input = "ABCD" };
             Form form = new SimpleActionView(model);
             form.ShowDialog();
