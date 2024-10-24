@@ -12,3 +12,5 @@
 - Initialize Model then passed to view
 - Action button modify output from input
 - On Ok data passed from View to model
+
+4. Solution changed using C# events and modification of Model instead of view then syncrhonization View with Model

@@ -40,7 +40,7 @@ namespace PocWindowsFormCSharp
             this.actionButton.Location = new System.Drawing.Point(40, 80);
             this.actionButton.Size = new System.Drawing.Size(80, 24);
             this.actionButton.Text = "Action";
-            this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
+            this.actionButton.Click += new System.EventHandler(this.theModel.ActionDone); 
 
             this.inputTextBox.Location = new System.Drawing.Point(40, 40);
             this.inputTextBox.Size = new System.Drawing.Size(400, 24);
@@ -60,13 +60,13 @@ namespace PocWindowsFormCSharp
             this.Text = "Form with OK Cancel buttons";
         }
 
-        private void ModelToView()
+        public void ModelToView()
         {
             this.inputTextBox.Text = theModel.Input;
             this.outputTextBox.Text = theModel.Output;
         }
 
-        private void ViewToModel()
+        public void ViewToModel()
         {
             theModel.Input = this.inputTextBox.Text;
             theModel.Output = this.outputTextBox.Text;
@@ -84,6 +84,7 @@ namespace PocWindowsFormCSharp
             this.Dispose();
         }
 
+        // no more used
         private void actionButton_Click(object sender, System.EventArgs e)
         {
             MessageBox.Show("Action - Button has been pressed!");
@@ -101,8 +102,9 @@ namespace PocWindowsFormCSharp
         }
         public SimpleActionView(SimpleActionModel theModel)
         {
-            InitializeComponents();
             this.theModel = theModel;
+            InitializeComponents();
+            theModel.theView = this;
             ModelToView();
         }
     }

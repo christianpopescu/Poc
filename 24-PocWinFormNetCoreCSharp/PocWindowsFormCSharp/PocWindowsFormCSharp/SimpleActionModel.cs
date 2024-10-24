@@ -10,5 +10,15 @@ namespace PocWindowsFormCSharp
     {
         public string Input { get; set; }
         public string Output { get; set; }
+
+        public SimpleActionView theView { get; set; }
+
+        public void ActionDone (object sender, EventArgs e)
+        {
+            theView.ViewToModel();
+            Output = Input + " : ";
+            theView.ModelToView();
+            theView.Refresh();
+        }
     }
 }
