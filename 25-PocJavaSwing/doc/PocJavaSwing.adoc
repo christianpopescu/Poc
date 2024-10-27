@@ -5,3 +5,12 @@
 * command line
 
 mvn archetype:generate "-DarchetypeGroupId=org.apache.maven.archetypes" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DgroupId=fr.vadc" "-DartifactId=PocSwingApp" "-DVersion=1.0-Snapshot"
+
+
+## To do
+
+* document pom.xml modification so the application run
+
+* do the necessary modifications so the application runs with the command
+
+   mvn exec:java
