@@ -1,0 +1,5 @@
+# Created at 2024-10-27T23:12:01.754
+Boot Manifest-JAR contains absolute paths in classpath 'D:\ccp_wrks\Poc\25-PocJavaSwing\src\PocSwingApp\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
