@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>fr.vadc</groupId>
-  <artifactId>PocSwingApp</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <artifactId>PocAwtApp</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-  <name>PocSwingApp</name>
+  <name>PocAwtApp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -40,8 +40,6 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
-	<dependency>
-	</dependency>
   </dependencies>
 
   <build>
@@ -60,12 +58,6 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
-		  <configuration>
-		                      <compilerArgs>
-                        <arg>--add-modules</arg>
-                        <arg>java.se,java.desktop</arg>
-                    </compilerArgs>
-		  </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -74,15 +66,6 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
-		        <configuration>
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>fr.vadc.App</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

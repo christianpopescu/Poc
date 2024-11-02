@@ -1,0 +1,30 @@
+= POC 2 - Java Awt
+Doc Writer <christian.popescu@outlook.com> v 1.0, 2024-11-02
+:sectnums:
+:toc:
+:toclevels: 5
+:pdf-page-size: A3
+
+
+== Starting
+
+* Create simple project from Maven archetypes
+
+[code, bash]
+
+----
+mvn archetype:generate "-DarchetypeGroupId=org.apache.maven.archetypes" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DgroupId=fr.vadc" "-DartifactId=PocAwtApp" "-DVersion=1.0-Snapshot"
+----
+
+== Working Log
+
+* Added Label to window
+
+
+== To do
+
+* document pom.xml modification so the application run
+
+* do the necessary modifications so the application runs with the command
+
+   mvn exec:java
