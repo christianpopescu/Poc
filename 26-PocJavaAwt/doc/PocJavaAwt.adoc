@@ -16,15 +16,24 @@ Doc Writer <christian.popescu@outlook.com> v 1.0, 2024-11-02
 mvn archetype:generate "-DarchetypeGroupId=org.apache.maven.archetypes" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DgroupId=fr.vadc" "-DartifactId=PocAwtApp" "-DVersion=1.0-Snapshot"
 ----
 
-== Working Log
 
-* Added Label to window
+* Add main class to the maven-jer-plugin
 
+[code, xml]
 
-== To do
+----
 
-* document pom.xml modification so the application run
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.4.2</version>
+			<configuration>
+				<archive>
+					<manifest>
+						<addClasspath>true</addClasspath>
+						<mainClass>fr.vadc.AppAwt</mainClass>
+					</manifest>
+				</archive>
+			</configuration>
+        </plugin>
+----
 
-* do the necessary modifications so the application runs with the command
-
-   mvn exec:java
