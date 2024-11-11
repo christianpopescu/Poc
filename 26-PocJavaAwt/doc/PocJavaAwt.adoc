@@ -37,3 +37,4 @@ mvn archetype:generate "-DarchetypeGroupId=org.apache.maven.archetypes" "-Darche
         </plugin>
 ----
 
+image:
