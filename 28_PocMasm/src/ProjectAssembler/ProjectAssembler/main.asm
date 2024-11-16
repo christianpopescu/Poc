@@ -2,10 +2,11 @@
 .386
 .model flat,c
 .stack 100h
-includelib libcmtd.lib
 
 scanf PROTO arg2:Ptr Byte, inputlist:VARARG
 printf PROTO arg1:Ptr Byte, printlist:VARARG
+includelib libcmtd.lib
+includelib legacy_stdio_definitions.lib			; fix legacy issues
 .data
 in1fmt byte "%d",0
 msg1fmt byte "%s",0
