@@ -269,3 +269,7 @@ target/
 
 #Cmake
 out/
+
+#vcpkg
+
+vcpkg_installed/
