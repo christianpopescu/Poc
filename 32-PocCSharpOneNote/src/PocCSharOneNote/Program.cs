@@ -89,7 +89,8 @@ namespace PocCSharOneNote
             {
                 "ListAllPages",
                 "ListAllNoteBooks",
-                "ListAllNotebooks_v2"
+                "ListAllNotebooks_v2",
+                "ListHierachycalNotebooksContent"
             });
 
             runButton = new Button
@@ -122,6 +123,9 @@ namespace PocCSharOneNote
                     break;
                 case "ListAllNotebooks_v2":
                     Program.ListAllNotebooks_v2();
+                    break;
+                case "ListHierachycalNotebooksContent":
+                    OneNoteHelper.PrintHierarchycalNotebooksContent();
                     break;
             }
 
