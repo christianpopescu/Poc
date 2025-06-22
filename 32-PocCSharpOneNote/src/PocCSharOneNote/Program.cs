@@ -7,7 +7,8 @@ namespace PocCSharOneNote
     {
         static void Main(string[] args)
         {
-            ListAllPages();
+            // ListAllPages();
+            ListAllNoteBooks();
         }
 
         private static void ListAllPages()
@@ -22,6 +23,21 @@ namespace PocCSharOneNote
                                 .ToList();
 
             foreach (var title in pageTitles)
+            {
+                Console.WriteLine(title);
+            }
+        }
+
+        private static void ListAllNoteBooks()
+        {
+            var app = new Microsoft.Office.Interop.OneNote.Application();
+            app.GetHierarchy(null, HierarchyScope.hsNotebooks, out string xml);
+            var doc = XDocument.Parse(xml);
+            var ns = doc.Root?.Name.Namespace;
+            var notebookTitles = doc.Descendants(ns + "Notebook")
+                                    .Select(nb => nb.Attribute("name")?.Value)
+                                    .ToList();
+            foreach (var title in notebookTitles)
             {
                 Console.WriteLine(title);
             }
